@@ -8,4 +8,4 @@ beautifulsoup4==4.12.2
 faiss-cpu==1.7.4
 
 
-# this file created by command : pipreqs /Users/srm/pyt/web-chat   
+# this file created by command : pipreqs 
