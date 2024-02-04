@@ -6,7 +6,7 @@ python-dotenv==1.0.1
 streamlit==1.31.0
 beautifulsoup4==4.12.2
 chromadb==0.4.22
-sqlite3==3.35.0
+sqlite3==3.45.0
 
 
 # this file created by command : pipreqs /Users/srm/pyt/web-chat   
