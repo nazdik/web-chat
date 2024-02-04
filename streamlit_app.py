@@ -4,7 +4,7 @@ from langchain_core.messages import AIMessage,HumanMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_community.document_loaders import WebBaseLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
@@ -24,7 +24,7 @@ def get_vectorstore_from_url(website_url):
   document=loader.load()  
   splitter=RecursiveCharacterTextSplitter()
   document_chunks=splitter.split_documents(document)
-  vectorstore=Chroma.from_documents(document_chunks,OpenAIEmbeddings())
+  vectorstore=FAISS.from_documents(document_chunks,OpenAIEmbeddings())
   return vectorstore 
 
 def get_context_retriever_chain(vectorstore):
